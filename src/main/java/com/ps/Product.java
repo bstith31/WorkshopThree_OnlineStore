@@ -1,5 +1,7 @@
 package com.ps;
 
+import java.io.BufferedReader;
+
 public class Product {
 
     // SKU|Product Name|Price|Department
@@ -57,4 +59,17 @@ public class Product {
                 ", department='" + department + '\'' +
                 '}';
     }
+
+
+   // public void loadProducts(String fileName) {
+    //    try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
+     //       String line;
+      //      while()
+        }
+
+
+
+
+
+
 }
