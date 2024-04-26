@@ -66,18 +66,21 @@ public class Product {
         try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
             String line;
             buffReader.readLine();
-            while (line = buffReader.readLine()) != null) {
+            while ((line = buffReader.readLine()) != null) {
                 String [] array = line.split("\\|");
                 String sku = array[0];
                 String productName = array[1];
-                double price = Double.parseDouble[2];
+                double price = Double.parseDouble(array[2]);
                 String department = array[3];
 
                 Product product = new Product (sku, productName, price, department);
-               // loadProducts.add
+             // ProductsList.add
             }
 
-        } catch (Exception e)
+        } catch (IOException e) {
+            System.out.println("Error reading product");
+
+        }
     }
 
 
