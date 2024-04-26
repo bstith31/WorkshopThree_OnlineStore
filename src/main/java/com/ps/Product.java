@@ -19,10 +19,6 @@ public class Product {
         this.department = department;
     }
 
-
-
-
-
     public String getSku() {
         return sku;
     }
@@ -55,6 +51,21 @@ public class Product {
         this.department = department;
     }
 
+
+    public class Store {
+        Product[] products; // An array to store products
+        int sizeOfProducts; // # of products in the store currently
+
+
+    public Store() {
+        products = new Product[20]; // Capacity inside the array
+        sizeOfProducts = 0; // Making size = 0
+    }
+
+
+
+
+
     @Override
     public String toString() {
         return "Product{" +
@@ -78,7 +89,7 @@ public class Product {
                 String department = array[3];
 
                 Product product = new Product (sku, productName, price, department);
-             // ProductsList.add
+                productsList.add(product);
             }
 
         } catch (IOException e) {
@@ -91,4 +102,5 @@ public class Product {
 
 
 
+    }
 }

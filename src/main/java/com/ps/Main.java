@@ -11,7 +11,7 @@ public class Main {
         ArrayList<Product> productsList = new ArrayList<>();
 
         Product product = new Product(null, null, 0.0, null);
-        product.loadProducts("Product.txt", productsList);
+        Product.loadProducts("Product.txt", productsList);
 
 
         for (Product p : productsList) {
