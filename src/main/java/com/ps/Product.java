@@ -1,6 +1,7 @@
 package com.ps;
 
-import java.io.BufferedReader;
+import java.io.*;
+import java.util.*;
 
 public class Product {
 
@@ -61,12 +62,23 @@ public class Product {
     }
 
 
-   // public void loadProducts(String fileName) {
-    //    try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
-     //       String line;
-      //      while()
-        }
+    public void loadProducts(String fileName) {
+        try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
+            String line;
+            buffReader.readLine();
+            while (line = buffReader.readLine()) != null) {
+                String [] array = line.split("\\|");
+                String sku = array[0];
+                String productName = array[1];
+                double price = Double.parseDouble[2];
+                String department = array[3];
 
+                Product product = new Product (sku, productName, price, department);
+               // loadProducts.add
+            }
+
+        } catch (Exception e)
+    }
 
 
 
