@@ -19,6 +19,10 @@ public class Product {
         this.department = department;
     }
 
+
+
+
+
     public String getSku() {
         return sku;
     }
@@ -62,7 +66,7 @@ public class Product {
     }
 
 
-    public void loadProducts(String fileName) {
+    public void loadProducts(String fileName, ArrayList<Product> productsList) {
         try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
             String line;
             buffReader.readLine();
