@@ -3,10 +3,7 @@ package com.ps;
 import java.io.*;
 import java.util.*;
 
-public class Product {
-
-    // SKU|Product Name|Price|Department
-
+class Product {
     private String sku;
     private String productName;
     private double price;
@@ -51,21 +48,6 @@ public class Product {
         this.department = department;
     }
 
-
-    public class Store {
-        Product[] products; // An array to store products
-        int sizeOfProducts; // # of products in the store currently
-
-
-    public Store() {
-        products = new Product[20]; // Capacity inside the array
-        sizeOfProducts = 0; // Making size = 0
-    }
-
-
-
-
-
     @Override
     public String toString() {
         return "Product{" +
@@ -76,31 +58,22 @@ public class Product {
                 '}';
     }
 
-
-    public void loadProducts(String fileName, ArrayList<Product> productsList) {
+    public static void loadProducts(String fileName, ArrayList<Product> productsList) {
         try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
             String line;
             buffReader.readLine();
             while ((line = buffReader.readLine()) != null) {
-                String [] array = line.split("\\|");
+                String[] array = line.split("\\|");
                 String sku = array[0];
                 String productName = array[1];
                 double price = Double.parseDouble(array[2]);
                 String department = array[3];
 
-                Product product = new Product (sku, productName, price, department);
+                Product product = new Product(sku, productName, price, department);
                 productsList.add(product);
             }
-
         } catch (IOException e) {
             System.out.println("Error reading product");
-
         }
-    }
-
-
-
-
-
     }
 }

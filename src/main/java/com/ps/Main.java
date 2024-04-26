@@ -10,12 +10,10 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         ArrayList<Product> productsList = new ArrayList<>();
 
-        Product product = new Product(null, null, 0.0, null);
         Product.loadProducts("Product.txt", productsList);
 
-
-        for (Product p : productsList) {
-            System.out.println(p);
+        for (Product i : productsList) {
+            System.out.println(i);
         }
     }
 }
