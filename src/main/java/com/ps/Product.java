@@ -62,7 +62,7 @@ public class Product {
     }
 
 
-    public void loadProducts(String fileName) {
+    public void loadProducts(String fileName, ArrayList<Product> productsList) {
         try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
             String line;
             buffReader.readLine();
