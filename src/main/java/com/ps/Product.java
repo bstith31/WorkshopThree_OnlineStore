@@ -3,9 +3,6 @@ package com.ps;
 import java.io.*;
 import java.util.*;
 
-import java.io.*;
-import java.util.*;
-
 
 // Class represents a product
 class Product {
@@ -186,14 +183,18 @@ class Product {
                     for (int i = 0; i < itemCount; i++) {
                         newItems[i] = items[i];
                     }
-                    items = newItems; // This updates a reference to the new array.
+                    itemCount--; // This updates a reference to the new array.
                 }
 
                 // This is a method to calculate the total price of items in the cart.
-                public double calculateTotal() {
-                    
+                public double calculateTotalPriceOfItems() {
+                    double totalPriceOfItems = 0; // Variable to store total price
+                    // This for loop iterates through all the items in the cart and the sum of their prices.
+                    for (int i = 0; i < itemCount; i++) {
+                        totalPriceOfItems += items[i].price;
+                    }
+                    return totalPriceOfItems; // This returns the total price
                 }
-
             }
         }
 

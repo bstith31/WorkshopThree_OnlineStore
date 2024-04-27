@@ -5,7 +5,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("WE FIXED IT!!!!!!!");
+        Store store = new Store();
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Product> productsList = new ArrayList<>();
