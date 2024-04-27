@@ -14,6 +14,10 @@ public class Main {
 
         for (Product i : productsList) {
             System.out.println(i);
+
+
+
+
         }
     }
 }

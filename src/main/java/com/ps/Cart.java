@@ -1,6 +1,5 @@
 package com.ps;
 
-public class Store {
 
 
     /*
@@ -33,4 +32,4 @@ public class Store {
 
 
      */
-}
+
