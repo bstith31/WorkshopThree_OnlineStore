@@ -19,6 +19,7 @@ class Product {
     }
 
     public static void loadProducts(String file, ArrayList<Product> productsList) {
+
     }
 
     public String getSku() {
@@ -74,23 +75,23 @@ class Product {
             productCount = 0; // Make size 0.
         }
 
-        // This is a method to load a product from a txt file.
-        public static void loadProducts(String fileName, ArrayList<Product> productsList) {
-            try (BufferedReader buffReader = new BufferedReader(new FileReader(fileName))) {
+        // This is a method to load products from a file
+        public static void loadProducts(String fileName, ArrayList<Product> productsList, Store store) {
+            try (BufferedReader buffreader = new BufferedReader(new FileReader(fileName))) {
                 String line;
-                buffReader.readLine();
-                while ((line = buffReader.readLine()) != null) {
+                buffreader.readLine();
+                while ((line = buffreader.readLine()) != null) {
                     String[] array = line.split("\\|");
                     String sku = array[0];
                     String productName = array[1];
                     double price = Double.parseDouble(array[2]);
                     String department = array[3];
-
                     Product product = new Product(sku, productName, price, department);
                     productsList.add(product);
+                    store.products[store.productCount++] = product;
                 }
             } catch (IOException e) {
-                System.out.println("Error reading product");
+                System.err.println("Error reading product file: " + e.getMessage());
             }
         }
 
@@ -140,7 +141,7 @@ class Product {
     }
 
     // This is a class that represents the shopping cart
-    public static class Cart {
+    static class Cart {
         private Product[] items; // Array of cart items
         private int itemCount; // # of items in the cart
 
@@ -198,5 +199,6 @@ class Product {
         }
     }
 }
+
 
 
