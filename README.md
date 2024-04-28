@@ -4,9 +4,7 @@
 ## Application Home Screen
 Here is the opening screen for the store from which you can access the 3 option we implemented:
 
-1. ***Display*** ***Product***
-2. ***Display*** ***Cart***
-3. ***Exit***
+![img.png](src/main/resources/imgHomeScreen.png)
 
 ## Overview of the options on Home
 When a user chooses one of the corresponding here are examples of what they see:
