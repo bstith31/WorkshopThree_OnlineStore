@@ -5,6 +5,8 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+
+// This is a class that represents a product.
 class Product {
     public String sku;
     public String productName;
@@ -23,7 +25,7 @@ class Product {
         Product[] products; // An array to store the products
         int productCount; // # of products in store.
 
-        // Constructor
+        // Constructor of Store
         public Store() {
             products = new Product[10]; // Initial capacity of products array
             productCount = 0; // Make size 0.
@@ -98,7 +100,7 @@ class Product {
         Product[] items; // Array of cart items
         int itemCount; // # of items in the cart
 
-        // Constructor
+        // Constructor for Cart.
         public Cart() {
             items = new Product[10]; // Initial capacity of the items array
             itemCount = 0; // Initialize item count
@@ -128,7 +130,7 @@ class Product {
                 for (int i = index; i < itemCount - 1; i++) {
                     items[i] = items[i + 1];
                 }
-                itemCount--;
+                itemCount--; //Decrements itemCount
             }
         }
 
@@ -144,7 +146,8 @@ class Product {
 
         // Method to calculate the total price of items in the cart
         public double calculateTotal() {
-            double total = 0;
+            double total = 0; // A variable to store the total price.
+            // This for loop iterates through all the items in the cart and the sum of their prices.
             for (int i = 0; i < itemCount; i++) {
                 total += items[i].price;
             }
@@ -156,19 +159,20 @@ class Product {
 // Main class to run the application
 public class Main {
     public static void main(String[] args) {
-        Product.Store store = new Product.Store(); // Create a new store object
-        store.loadProducts("product.txt"); // Load products from CSV file
-        Product.Cart cart = new Product.Cart(); // Create a new shopping cart object
+        Product.Store store = new Product.Store(); // Creates a new store object
+        store.loadProducts("product.txt"); // Loads products from CSV file
+        Product.Cart cart = new Product.Cart(); // Creates a new shopping cart object
 
-        Scanner scanner = new Scanner(System.in); // Scanner object to read user input
+        Scanner scanner = new Scanner(System.in); // A Scanner object to read user input
 
-        // Main loop to display menu and handle user actions
+        // Main while loop to display menu and handle user actions
         while (true) {
             System.out.println("Store Home Screen:");
             System.out.println("1. Display Products");
             System.out.println("2. Display Cart");
             System.out.println("3. Exit");
             System.out.print("Enter your choice: ");
+
             int choice = scanner.nextInt();
 
             switch (choice) {
@@ -197,10 +201,10 @@ public class Main {
                         System.out.print("Enter your choice: ");
                         String userAction = scanner.next().trim().toLowerCase();
 
-                        if (userAction.equals("a")) { // Add to Cart
+                        if (userAction.equals("a")) { // Adds this to the Cart
                             System.out.print("Enter SKU of the product you want to add to cart: ");
                             String sku = scanner.next().trim();
-                            // Find the product with the given SKU in the store
+                            // This finds the product with the given SKU in the store.
                             Product productToAdd = null;
                             for (Product p : store.products) {
                                 if (p.sku.equals(sku)) {
